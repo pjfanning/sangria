@@ -1,5 +1,5 @@
 name := "sangria"
-organization := "org.sangria-graphql"
+organization := "com.github.pjfanning.sangria"
 version := "1.4.3-SNAPSHOT"
 
 description := "Scala GraphQL implementation"
@@ -21,6 +21,8 @@ scalacOptions ++= {
     Seq.empty
 }
 
+resolvers += Resolver.sonatypeRepo("snapshots")
+
 testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oF")
 
 libraryDependencies ++= Seq(
@@ -28,13 +30,13 @@ libraryDependencies ++= Seq(
   "org.parboiled" %% "parboiled" % "2.1.7",
 
   // AST Visitor
-  "org.sangria-graphql" %% "macro-visit" % "0.1.2-SNAPSHOT",
+  "com.github.pjfanning.sangria" %% "macro-visit" % "0.1.2-SNAPSHOT",
 
   // Marshalling
-  "org.sangria-graphql" %% "sangria-marshalling-api" % "1.0.4-SNAPSHOT",
+  "com.github.pjfanning.sangria" %% "sangria-marshalling-api" % "1.0.4-SNAPSHOT",
 
   // Streaming
-  "org.sangria-graphql" %% "sangria-streaming-api" % "1.0.1-SNAPSHOT",
+  "com.github.pjfanning.sangria" %% "sangria-streaming-api" % "1.0.1-SNAPSHOT",
 
   // Macros
   "org.scala-lang" % "scala-reflect" % scalaVersion.value,
