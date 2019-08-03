@@ -30,13 +30,13 @@ libraryDependencies ++= Seq(
   "org.parboiled" %% "parboiled" % "2.1.7",
 
   // AST Visitor
-  "com.github.pjfanning.sangria" %% "macro-visit" % "0.1.2-SNAPSHOT",
+  "com.github.pjfanning.sangria" %% "macro-visit" % "0.1.1",
 
   // Marshalling
-  "com.github.pjfanning.sangria" %% "sangria-marshalling-api" % "1.0.4-SNAPSHOT",
+  "com.github.pjfanning.sangria" %% "sangria-marshalling-api" % "1.0.3",
 
   // Streaming
-  "com.github.pjfanning.sangria" %% "sangria-streaming-api" % "1.0.1-SNAPSHOT",
+  "com.github.pjfanning.sangria" %% "sangria-streaming-api" % "1.0.0",
 
   // Macros
   "org.scala-lang" % "scala-reflect" % scalaVersion.value,
