@@ -12,7 +12,7 @@ crossScalaVersions := Seq("2.11.12", "2.12.8", scalaVersion.value)
 scalacOptions ++= Seq(
   "-deprecation",
   "-feature",
-  "-Xlint:-missing-interpolator,-unused,_")
+  "-Xlint:-missing-interpolator,_")
 
 scalacOptions ++= {
   if (scalaVersion.value startsWith "2.11")
@@ -27,7 +27,7 @@ testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-oF")
 
 libraryDependencies ++= Seq(
   // AST Parser
-  "org.parboiled" %% "parboiled" % "2.1.7",
+  "org.parboiled" %% "parboiled" % "2.1.8",
 
   // AST Visitor
   "com.github.pjfanning.sangria" %% "macro-visit" % "0.1.1",
@@ -42,14 +42,15 @@ libraryDependencies ++= Seq(
   "org.scala-lang" % "scala-reflect" % scalaVersion.value,
 
   // Testing
+  "co.fs2" %% "fs2-core" % "1.1.0-M1" % Test,
   "org.scalatest" %% "scalatest" % "3.0.8" % "test",
-//  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "1.0.1" % Test,
-//  "org.sangria-graphql" %% "sangria-spray-json" % "1.0.1" % Test,
-//  "org.sangria-graphql" %% "sangria-argonaut" % "1.0.0" % Test,
-//  "org.sangria-graphql" %% "sangria-ion" % "1.0.0" % Test,
-//  "org.sangria-graphql" %% "sangria-monix" % "1.0.0" % Test,
-//  "org.sangria-graphql" %% "sangria-rxscala" % "1.0.0" % Test,
-  "eu.timepit" %% "refined" % "0.9.8" % Test,
+  //"org.sangria-graphql" %% "sangria-marshalling-testkit" % "1.0.3-SNAPSHOT" % Test,
+  //"org.sangria-graphql" %% "sangria-spray-json" % "1.0.3-SNAPSHOT" % Test,
+  //"org.sangria-graphql" %% "sangria-argonaut" % "1.0.2-SNAPSHOT" % Test,
+  //"org.sangria-graphql" %% "sangria-ion" % "1.0.1-SNAPSHOT" % Test,
+  //  "org.sangria-graphql" %% "sangria-monix" % "1.0.0" % Test,
+  //  "org.sangria-graphql" %% "sangria-rxscala" % "1.0.0" % Test,
+  "eu.timepit" %% "refined" % "0.9.9" % Test,
 
   // CATs
   "net.jcazevedo" %% "moultingyaml" % "0.4.1" % Test,
